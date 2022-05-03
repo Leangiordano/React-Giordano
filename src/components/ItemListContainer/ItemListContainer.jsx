@@ -19,7 +19,6 @@ const ItemListContainer = ({greeting}) => {
     <><div className="landing">
       <h1>{greeting}</h1>
     </div>
-    <ItemCount stock={10} initial={1} />
     <ItemList products={products} />
     </>
   )

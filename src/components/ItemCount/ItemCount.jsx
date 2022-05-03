@@ -32,7 +32,7 @@ const ItemCount = ({stock, initial}) => {
 
             <Button variant="primary" onClick={onIncrease} className="px-3 mx-3"> + </Button> {" "}
         </div>
-        <Button variant="danger" onClick={onAdd} className="mt-3 w-25"> Agregar al Carrito </Button> {" "}
+        <Button variant="danger" onClick={onAdd} className="mt-3 w-auto"> Agregar al Carrito </Button> {" "}
         </div>
     )
 }
