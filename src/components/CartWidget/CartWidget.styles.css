@@ -2,11 +2,9 @@
     display: inline-block;
     justify-content: space-between;
     align-items: center;
-    margin-top: 5px;
-
+    margin-top: 3px;
     margin-left: 9px;
     padding: 10px 20px;
-
     color: #393e46;
     cursor: pointer;
     border-radius: 8px;
@@ -19,6 +17,7 @@
 }
 
 .navbar__cart-icon {
+    margin-bottom: 5px;
     width: 20px;
     height:20px;
 }
