@@ -38,7 +38,7 @@ export const NavBar = () => {
           <Form className="d-flex">
             <FormControl
               type="search"
-              placeholder="Buscar"
+              placeholder="Buscar 🔎"
               className="me-2"
               aria-label="Search"
             />
