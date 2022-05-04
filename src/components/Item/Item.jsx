@@ -5,7 +5,7 @@ import { Row, Col, Card } from "react-bootstrap";
 const Item = ({ title, price, stock, image , description }) => {
     return (
         
-        <Row xs={1} md={2} lg={4} className="g-4">
+      <Row xs={1} md={2} lg={4} className="g-4">
         
           <Col>
             <Card className="card">

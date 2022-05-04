@@ -5,7 +5,7 @@ const ItemList = ({ products }) => {
     console.log("products en ItemList", products)
     return (
         <>
-        <Row Row xs={1} md={2} lg={4} className="g-4">
+        <Row xs={1} md={2} lg={4} className="g-4">
         { products.map((product =>{
             console.log(product)
             return (
