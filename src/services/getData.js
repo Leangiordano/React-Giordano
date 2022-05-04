@@ -91,10 +91,16 @@ const data = [
     },
 ];
 
-const getData = new Promise((resolve) => {
+export const getProducts = new Promise((resolve) => {
     setTimeout(() => {
         resolve(data);
     }, 1000);
 });
+console.log(getProducts);
 
-export default getData;
+export const getProduct = new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(data[0]);
+    }, 1000);
+});
+console.log(getProduct);
