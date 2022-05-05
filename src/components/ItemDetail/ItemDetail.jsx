@@ -7,7 +7,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
-function ItemDetail({ title, description, image, price, category}) {
+function ItemDetail({ stock, title, description, image, price, category}) {
     return (
         <div>
             <Card align="center" elevation={13}>
@@ -28,7 +28,7 @@ function ItemDetail({ title, description, image, price, category}) {
                         ${price}
                     </Typography>
                 </CardContent>
-                <ItemCount initial={0} stock={10} onAdd={() => {}} />
+                <ItemCount initial={0} stock={stock} onAdd={() => {}} />
             </Card>
         </div>
     )
