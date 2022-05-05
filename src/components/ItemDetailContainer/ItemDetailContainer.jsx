@@ -20,9 +20,9 @@ function ItemDetailContainer() {
 
     return (
         <div className='item-detail-container'>
-            <ItemDetail item={data} />
+            <ItemDetail title={data.title} description={data.description} price={data.price} image={data.image} category={data.category} />
         </div>
-    )
+    );
 }
 
 export default ItemDetailContainer

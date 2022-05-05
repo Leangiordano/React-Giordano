@@ -9,7 +9,7 @@ function App() {
     <div>
       <NavBar />
       <main className="bkg1">
-        <ItemListContainer greeting="Bienvenidos a Lenceria YeiMax" />
+       {/* <ItemListContainer greeting="Bienvenidos a Lenceria YeiMax" />  */}
         <ItemDetailContainer />
       </main>
     </div>
