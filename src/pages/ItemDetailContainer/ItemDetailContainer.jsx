@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {getProduct} from '../../services/getData';
-import ItemDetail from '../ItemDetail/ItemDetail'
+import ItemDetail from '../../components/ItemDetail/ItemDetail'
 
 function ItemDetailContainer() {
     const [data, setData] = useState({});
