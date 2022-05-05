@@ -100,7 +100,7 @@ console.log(getProducts);
 
 export const getProduct = new Promise((resolve) => {
         setTimeout(() => {
-            resolve(data[6]);
+            resolve(data[0]);
     }, 1000);
 });
 console.log(getProduct);
