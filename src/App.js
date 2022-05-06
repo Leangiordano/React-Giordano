@@ -11,6 +11,7 @@ function App() {
       <NavBar />
       <main className="bkg1">
       <Routes>
+      <Route path="/react-giordano" element={<ItemListContainer greeting="Bienvenidos a Lenceria YeiMax!"/>} />
         <Route path="/" element={<ItemListContainer />} />
         <Route path="/category/:categoryId" element={<ItemListContainer />} />
         <Route path="/item/:id" element={<ItemDetailContainer />} />
