@@ -16,7 +16,7 @@ export const NavBar = () => {
   return (
     <Navbar bg="secondary" variant="dark" expand="lg">
       <Container fluid>
-        <Navbar.Brand href='#'>Lenceria YeiMax</Navbar.Brand>
+        <Navbar.Brand href='/react-giordano'>Lenceria YeiMax</Navbar.Brand>
 
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
