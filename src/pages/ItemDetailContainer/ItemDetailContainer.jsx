@@ -1,10 +1,11 @@
-import React, { useParams, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {getProduct} from '../../services/getData';
 import ItemDetail from '../../components/ItemDetail/ItemDetail'
+import { useParams } from 'react-router-dom';
 
 function ItemDetailContainer() {
     const [data, setData] = useState({});
-    const { id } = useParams();
+    const { id } = useParams ();
 
     useEffect(() => {
         getProduct(id)
@@ -17,7 +18,7 @@ function ItemDetailContainer() {
 
     return (
         <div className='item-detail-container'>
-            <ItemDetail title={data.title} description={data.description} price={data.price} image={data.image} category={data.category} stock={data.stock} />
+            <ItemDetail {...data} />
         </div>
     );
 }

@@ -3,15 +3,22 @@ import ItemList from '../../components/Item/ItemList';
 import "./ItemListContainer.styles.css";
 import { useState, useEffect } from 'react';
 import {getProducts} from '../../services/getData';
+import { useParams } from 'react-router-dom';
 
 const ItemListContainer = ({greeting}) => {
   const [products, setProducts] = useState([]);
+  const { categoryId } = useParams();
+
 
   useEffect(() =>{
-    getProducts
-    .then((response) => setProducts(response))
-    .catch((error) => console.log("Error: " , error))
-  }, []);
+    getProducts (categoryId)
+    .then(res => {
+      setProducts(res);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  }, [categoryId]);
 
 
   return (

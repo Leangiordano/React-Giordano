@@ -1,5 +1,7 @@
 import * as React from "react";
 import CartWidget from "../CartWidget/CartWidget";
+import { NavLink} from 'react-router-dom';
+import './NavBar.css';
 import {
   Navbar,
   Container,
@@ -14,7 +16,7 @@ export const NavBar = () => {
   return (
     <Navbar bg="secondary" variant="dark" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#">Lenceria YeiMax</Navbar.Brand>
+        <Navbar.Brand href='#'>Lenceria YeiMax</Navbar.Brand>
 
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -23,8 +25,9 @@ export const NavBar = () => {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Inicio</Nav.Link>
-            <Nav.Link href="#action2">Nosotros</Nav.Link>
+            <NavLink to='/category/gorras' className={nav => nav.isActive ? 'nav-active' : ''}>Gorras</NavLink>
+            <NavLink to='/category/medias' className={nav => nav.isActive ? 'nav-active' : ''}>Medias</NavLink>
+            <NavLink to='/category/ropa-interior' className={nav => nav.isActive ? 'nav-active' : ''}>Ropa Interior</NavLink>
             <NavDropdown title="Categorias" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Hombre</NavDropdown.Item>
               <NavDropdown.Item href="#action4">Mujer</NavDropdown.Item>

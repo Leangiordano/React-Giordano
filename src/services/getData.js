@@ -4,7 +4,7 @@ const data = [
         image: "https://d3ugyf2ht6aenh.cloudfront.net/stores/891/014/products/dsc005701-1688fe60e4c181bf5c16330959174666-320-0.jpg",
         title: "Boxer Model Tyrant Negro",
         description: "Este es el primer producto",
-        category: "ropa interior",
+        category: "ropa-interior",
         price: "2500",
         stock: "10",
     },
@@ -13,7 +13,7 @@ const data = [
         image: "https://d3ugyf2ht6aenh.cloudfront.net/stores/891/014/products/dsc005721-13cc87b92f28aa5dcf16330955752300-320-0.jpg",
         title: "Boxer Model Tyrant Gris",
         description: "Este es el segundo producto",
-        category: "ropa interior",
+        category: "ropa-interior",
         price: "2500",
         stock: "10",
     },
@@ -22,7 +22,7 @@ const data = [
         image: "https://d3ugyf2ht6aenh.cloudfront.net/stores/891/014/products/dsc005761-b1ae682c8ed387099c16330961587834-320-0.jpg",
         title: "Boxer Model Tyrant Azul",
         description: "Este es el tercer producto",
-        category: "ropa interior",
+        category: "ropa-interior",
         price: "2500",
         stock: "10",
     },
@@ -91,11 +91,13 @@ const data = [
     },
 ];
 
-export const getProducts = new Promise((resolve) => {
+export const getProducts = (categoryId) => {
+    return new Promise (resolve => {
     setTimeout(() => {
-        resolve(data);
-    }, 1000);
-});
+        resolve(categoryId ? data.filter(products => products.category === categoryId) : data)
+        }, 1000)
+    })
+}
 
 
 export const getProduct = (id) => {

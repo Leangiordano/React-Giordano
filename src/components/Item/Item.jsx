@@ -3,7 +3,7 @@ import React from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import { Row, Col, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-const Item = ({ title, price, stock, image , description, id }) => {
+const Item = ({ title, price, stock, image , description, id, category }) => {
     return (
         
       <Row xs={1} md={2} lg={4} className="g-4">
