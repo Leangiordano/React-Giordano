@@ -1,22 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useParams, useEffect, useState } from 'react';
 import {getProduct} from '../../services/getData';
 import ItemDetail from '../../components/ItemDetail/ItemDetail'
 
 function ItemDetailContainer() {
     const [data, setData] = useState({});
+    const { id } = useParams();
 
     useEffect(() => {
-        getProduct
+        getProduct(id)
             .then(res => {
                 setData(res);
             })
-            .catch(err => {
-                console.log(err);
-                alert('Ocurrio un error, revisar la consola');
-            });
-    }, []);
+            .catch(err => console.log(err))
+    }, [id])
     
-    console.log(data);
 
     return (
         <div className='item-detail-container'>
