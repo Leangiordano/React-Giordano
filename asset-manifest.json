@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/react-giordano/static/css/main.a43da769.css",
-    "main.js": "/react-giordano/static/js/main.d234b2f9.js",
+    "main.js": "/react-giordano/static/js/main.73e56f98.js",
     "static/js/787.6b71d5b7.chunk.js": "/react-giordano/static/js/787.6b71d5b7.chunk.js",
     "index.html": "/react-giordano/index.html",
     "main.a43da769.css.map": "/react-giordano/static/css/main.a43da769.css.map",
-    "main.d234b2f9.js.map": "/react-giordano/static/js/main.d234b2f9.js.map",
+    "main.73e56f98.js.map": "/react-giordano/static/js/main.73e56f98.js.map",
     "787.6b71d5b7.chunk.js.map": "/react-giordano/static/js/787.6b71d5b7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a43da769.css",
-    "static/js/main.d234b2f9.js"
+    "static/js/main.73e56f98.js"
   ]
 }
