@@ -8,7 +8,7 @@
 
 * **Profesor:** Medina Diego
 
-* **Tutor:** Ailin
+* **Tutor:** Ailin Nakaganeku
 
 * **Desarrollado por el estudiante:** Leandro Rodrigo Giordano
 

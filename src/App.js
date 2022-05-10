@@ -4,6 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ItemListContainer from "./pages/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./pages/ItemDetailContainer/ItemDetailContainer"
 import { Route, Routes } from "react-router-dom";
+import Cart from "./pages/Cart/Cart";
+
 
 function App() {
   return (
@@ -13,6 +15,7 @@ function App() {
       <Routes>
       <Route path="/react-giordano" element={<ItemListContainer greeting="Bienvenidos a Lenceria YeiMax!"/>} />
         <Route path="/" element={<ItemListContainer />} />
+        <Route path="/cart" element={<Cart/>} />
         <Route path="/category/:categoryId" element={<ItemListContainer />} />
         <Route path="/item/:id" element={<ItemDetailContainer />} />
       </Routes>
