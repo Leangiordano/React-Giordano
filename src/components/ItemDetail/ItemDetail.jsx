@@ -1,4 +1,5 @@
-import * as React from 'react';
+import React, {useState} from 'react';
+import {Link} from 'react-router-dom';
 import "./ItemDetail.styles.css";
 import ItemCount from '../ItemCount/ItemCount';
 import Card from '@mui/material/Card';
@@ -8,6 +9,11 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
 function ItemDetail({ stock, title, description, image, price, category}) {
+
+    const [cantidadDeProductos, setCantidadDeProductos] = useState(null);
+        function addHandler(quantityToAdd) {
+            setCantidadDeProductos(quantityToAdd);
+        }
     return (
         <div>
             <Card align="center" elevation={13}>
@@ -28,7 +34,10 @@ function ItemDetail({ stock, title, description, image, price, category}) {
                         ${price}
                     </Typography>
                 </CardContent>
-                <ItemCount initial={0} stock={stock} onAdd={() => {}} />
+            {cantidadDeProductos ?
+                <button><Link to='/cart'>Terminar compra ({ cantidadDeProductos } items)</Link></button> :
+                <ItemCount initial={0} stock={stock} onAdd={addHandler} />
+            }
             </Card>
         </div>
     )

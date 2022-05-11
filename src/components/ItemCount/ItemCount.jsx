@@ -1,7 +1,7 @@
 import {useState} from "react";
 import {Button} from "react-bootstrap";
 
-const ItemCount = ({stock, initial}) => {
+const ItemCount = ({stock, initial, onAdd}) => {
     const [count, setCount] = useState(initial);
 
         const onIncrease = () => {
@@ -18,10 +18,6 @@ const ItemCount = ({stock, initial}) => {
             }
         };
 
-        const onAdd = () => {
-            const message = `Agregaste ${count} producto`;
-            count === 1 ? alert(`${message} al carrito`) : alert(`${message}s al carrito`);
-        };
 
     return (
         /*aca agregue el w-50 en el primer div. En el segundo agregue justify content.*/
@@ -33,7 +29,7 @@ const ItemCount = ({stock, initial}) => {
 
             <Button variant="primary" onClick={onIncrease} className="px-3 mx-3"> + </Button> {" "}
         </div>
-        <Button variant="danger" onClick={onAdd} className="mt-3 mb-3 w-auto"> Agregar al Carrito </Button> {" "}
+        <Button variant="danger" onClick={() => onAdd(count)} className="mt-3 mb-3 w-auto"> Agregar al Carrito </Button> {" "}
         </div>
     )
 }
