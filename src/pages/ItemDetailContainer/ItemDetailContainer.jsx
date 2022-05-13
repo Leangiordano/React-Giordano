@@ -18,7 +18,7 @@ function ItemDetailContainer() {
 
     return (
         <div className='item-detail-container'>
-            <ItemDetail {...data} />
+            <ItemDetail product={data} />
         </div>
     );
 }

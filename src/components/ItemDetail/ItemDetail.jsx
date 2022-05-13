@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import "./ItemDetail.styles.css";
+import { useCartContext } from "../../CartContext/CartContextProvider";
 import ItemCount from '../ItemCount/ItemCount';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
@@ -8,12 +9,16 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
-function ItemDetail({ stock, title, description, image, price, category}) {
-
+function ItemDetail({ product }) {
+    const {stock, title, description, image, price, category} = product;
     const [cantidadDeProductos, setCantidadDeProductos] = useState(null);
+    const { addToCart, cartList } = useCartContext();
+    console.log(cartList);
+
         function addHandler(quantityToAdd) {
             setCantidadDeProductos(quantityToAdd);
-        }
+            addToCart(product, quantityToAdd);
+        };
     return (
         <div>
             <Card align="center" elevation={13}>

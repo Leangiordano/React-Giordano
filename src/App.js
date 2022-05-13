@@ -5,11 +5,13 @@ import ItemListContainer from "./pages/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./pages/ItemDetailContainer/ItemDetailContainer"
 import { Route, Routes } from "react-router-dom";
 import Cart from "./pages/Cart/Cart";
+import CartContextProvider from "./CartContext/CartContextProvider";
 
 
 function App() {
   return (
     <div>
+      <CartContextProvider>
       <NavBar />
       <main className="bkg1">
       <Routes>
@@ -20,6 +22,7 @@ function App() {
         <Route path="/item/:id" element={<ItemDetailContainer />} />
       </Routes>
       </main>
+      </CartContextProvider>
     </div>
   );
 
