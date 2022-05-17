@@ -10,12 +10,15 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
 function ItemDetail({ product }) {
-    const {stock, title, description, image, price, category} = product;
+    const {id, stock, title, description, image, price, category} = product;
     const [cantidadDeProductos, setCantidadDeProductos] = useState(null);
-    const { addToCart, cartList } = useCartContext();
-    console.log(cartList);
+    const { addToCart, unitsPerProduct } = useCartContext();
 
-        function addHandler(quantityToAdd) {
+        const addHandler = (quantityToAdd) => {
+            if (quantityToAdd + unitsPerProduct(id) > stock) {
+                const availableToAdd = stock - unitsPerProduct(id);
+                return alert(`Solamente podés agregar ${availableToAdd} productos`)
+            }
             setCantidadDeProductos(quantityToAdd);
             addToCart(product, quantityToAdd);
         };
@@ -38,10 +41,13 @@ function ItemDetail({ product }) {
                     <Typography variant="h4" color="red">
                         ${price}
                     </Typography>
+                    <Typography variant="h6" color="black">
+                       Stock: {stock} unidades
+                    </Typography>
                 </CardContent>
             {cantidadDeProductos ?
                 <button><Link to='/cart'>Terminar compra ({ cantidadDeProductos } items)</Link></button> :
-                <ItemCount initial={0} stock={stock} onAdd={addHandler} />
+                <ItemCount initial={1} stock={stock} onAdd={addHandler} />
             }
             </Card>
         </div>

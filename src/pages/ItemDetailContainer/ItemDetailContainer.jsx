@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 
 function ItemDetailContainer() {
     const [data, setData] = useState({});
+    const [loading, setLoading] = useState(true);
     const { id } = useParams ();
 
     useEffect(() => {
@@ -13,12 +14,13 @@ function ItemDetailContainer() {
                 setData(res);
             })
             .catch(err => console.log(err))
+            .finally(() => setLoading(false));
     }, [id])
     
 
     return (
         <div className='item-detail-container'>
-            <ItemDetail product={data} />
+           {loading ? <h1>Cargando...</h1> : <ItemDetail product={data} />}
         </div>
     );
 }

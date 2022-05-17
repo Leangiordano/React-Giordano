@@ -9,7 +9,7 @@ const CartContextProvider = ({ children }) => {
     const [cartList, setCartList] = useState([]);
 
     const isInCart = (id) => {
-        
+
         return cartList.some(item => item.id === id);
     };
 
@@ -42,7 +42,7 @@ const CartContextProvider = ({ children }) => {
                 : product
                 )
             );
-        }
+        };
         
         const totalCount = () => {
             return cartList.reduce((total, item) => total + item.quantity, 0);
@@ -53,10 +53,11 @@ const CartContextProvider = ({ children }) => {
         };
 
         const unitsPerProduct = (id) => {
-            return cartList.find((item) => item.id === id).quantity;
+            const foundInCart = cartList.find((item) => item.id === id);
+            return foundInCart ? foundInCart.quantity : 0;
         };
 
-  return ( <CartContext.Provider value={{ cartList, addToCart,emptyCart,deleteById, totalCount, totalPrice, removeOneUnit }}>
+  return ( <CartContext.Provider value={{ cartList, addToCart,emptyCart,deleteById, totalCount, totalPrice, removeOneUnit, unitsPerProduct }}>
       {children}
     </CartContext.Provider>
   )
