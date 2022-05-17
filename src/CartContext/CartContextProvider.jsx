@@ -9,6 +9,7 @@ const CartContextProvider = ({ children }) => {
     const [cartList, setCartList] = useState([]);
 
     const isInCart = (id) => {
+        
         return cartList.some(item => item.id === id);
     };
 
@@ -29,6 +30,19 @@ const CartContextProvider = ({ children }) => {
         const deleteById = (id) => {
             setCartList(cartList.filter((item) => item.id !== id));
         };
+
+        const removeOneUnit = (id) => {
+            if (unitsPerProduct(id) === 1) {
+                return deleteById(id);
+            }
+            setCartList(
+                cartList.map((product) => 
+                product.id === id
+                ? {...product, quantity: product.quantity - 1}
+                : product
+                )
+            );
+        }
         
         const totalCount = () => {
             return cartList.reduce((total, item) => total + item.quantity, 0);
@@ -42,7 +56,7 @@ const CartContextProvider = ({ children }) => {
             return cartList.find((item) => item.id === id).quantity;
         };
 
-  return ( <CartContext.Provider value={{ cartList, addToCart,emptyCart,deleteById, totalCount, totalPrice }}>
+  return ( <CartContext.Provider value={{ cartList, addToCart,emptyCart,deleteById, totalCount, totalPrice, removeOneUnit }}>
       {children}
     </CartContext.Provider>
   )

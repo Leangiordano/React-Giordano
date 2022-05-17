@@ -11,8 +11,11 @@ import {
   FormControl,
   Button,
 } from "react-bootstrap";
+import { useCartContext } from "../../CartContext/CartContextProvider";
 
 export const NavBar = () => {
+  const { totalCount } = useCartContext();
+
   return (
     <Navbar bg="secondary" variant="dark" expand="lg">
       <Container fluid>
@@ -47,7 +50,7 @@ export const NavBar = () => {
             />
             <Button variant="outline-info">Buscar</Button>
           </Form>
-          <CartWidget/>
+          {totalCount() > 0 && <CartWidget/>}
         </Navbar.Collapse>
       </Container>
     </Navbar>
