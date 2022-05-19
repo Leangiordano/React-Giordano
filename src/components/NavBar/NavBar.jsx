@@ -1,6 +1,6 @@
 import * as React from "react";
 import CartWidget from "../CartWidget/CartWidget";
-import { NavLink} from 'react-router-dom';
+import { Link, NavLink} from 'react-router-dom';
 import './NavBar.css';
 import {
   Navbar,
@@ -19,7 +19,7 @@ export const NavBar = () => {
   return (
     <Navbar bg="secondary" variant="dark" expand="lg">
       <Container fluid>
-        <Navbar.Brand href='/react-giordano'>Lenceria YeiMax</Navbar.Brand>
+        <div className="inicio"> <Link to="">Lenceria YeiMax </Link> </div>
 
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">

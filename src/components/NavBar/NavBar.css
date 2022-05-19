@@ -1,3 +1,9 @@
+.inicio{
+    font-size: 20px;
+    font-weight: bolder;
+    font-style: italic;
+}
+
 .nav-active {
     text-decoration: underline;
     color: white;
