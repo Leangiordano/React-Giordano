@@ -26,7 +26,7 @@ const ItemListContainer = ({greeting}) => {
 
   return (
     <> <div className="landing">
-    <h1>{greeting}</h1>
+    <h1>Bienvenidos a Lencería YeiMax</h1>
   </div> {loading ? <h1>Cargando...</h1> :
     <ItemList products={products} /> }
     </>
