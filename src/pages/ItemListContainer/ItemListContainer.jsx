@@ -27,6 +27,7 @@ function ItemListContainer ({ greeting }) {
   const { categoryId } = useParams();
 
   useEffect(() => {
+    setLoading(true);
     getProducts (categoryId)
     .then((snapshot) => {
       setProducts(
@@ -42,8 +43,8 @@ function ItemListContainer ({ greeting }) {
     })
     .catch((error) => {
       console.log("error: ", error);
-    });
- 
+    })
+    .finally(() => setLoading(false));
   }, [categoryId]);
 
 
