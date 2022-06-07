@@ -5,6 +5,7 @@ import ItemListContainer from "./pages/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./pages/ItemDetailContainer/ItemDetailContainer"
 import { Route, Routes, HashRouter } from "react-router-dom";
 import Cart from "./pages/Cart/Cart";
+import Checkout from "./components/Checkout/Checkout";
 import CartContextProvider from "./CartContext/CartContextProvider";
 
 
@@ -19,6 +20,7 @@ function App() {
       <Route path="/react-giordano" element={<ItemListContainer greeting="Bienvenidos a Lenceria YeiMax!"/>} />
         <Route path="/" element={<ItemListContainer />} />
         <Route path="/cart" element={<Cart/>} />
+        <Route path="/checkout" element={<Checkout />} />
         <Route path="/category/:categoryId" element={<ItemListContainer />} />
         <Route path="/item/:id" element={<ItemDetailContainer />} />
       </Routes>

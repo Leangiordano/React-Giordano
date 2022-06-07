@@ -15,7 +15,7 @@ function ItemDetailContainer() {
             })
             .catch(err => console.log(err))
             .finally(() => setLoading(false));
-    }, [id])
+    }, [id]);
     
 
     return (

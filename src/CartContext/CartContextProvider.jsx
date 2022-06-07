@@ -57,8 +57,18 @@ const CartContextProvider = ({ children }) => {
             return foundInCart ? foundInCart.quantity : 0;
         };
 
-  return ( <CartContext.Provider value={{ cartList, addToCart,emptyCart,deleteById, totalCount, totalPrice, removeOneUnit, unitsPerProduct }}>
-      {children}
+  return ( 
+    <CartContext.Provider value={{ 
+        cartList, 
+        addToCart,
+        emptyCart,
+        deleteById, 
+        totalCount, 
+        totalPrice, 
+        removeOneUnit, 
+        unitsPerProduct
+        }}>
+            {children}
     </CartContext.Provider>
   )
 };
