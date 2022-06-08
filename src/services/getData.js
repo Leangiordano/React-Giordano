@@ -37,7 +37,7 @@ const data = [
     },
     {
         id: 5,
-        image: "https://d3ugyf2ht6aenh.cloudfront.net/stores/891/014/products/dsc015181-ccc5818316e618cdbe16358773653870-320-0.jpg",
+        image: "https://d3ugyf2ht6aenh.cloudfront.net/stores/891/014/products/wat047661-59da52ae905de2d49d16522103861396-640-0.jpg",
         title: "Medias Crew Kyoto",
         description: "Este es el quinto producto",
         category: "medias",
@@ -46,7 +46,7 @@ const data = [
     },
     {
         id: 6,
-        image: "https://d3ugyf2ht6aenh.cloudfront.net/stores/891/014/products/dsc015421-b4d1c4c00cf4f9529516358770135561-320-0.jpg",
+        image: "https://d3ugyf2ht6aenh.cloudfront.net/stores/891/014/products/wat047771-d511f6fe0c78bb8c7a16522101123009-640-0.jpg",
         title: "Medias Crew Legend",
         description: "Este es el sexto producto",
         category: "medias",

@@ -13,12 +13,18 @@ const Cart = () => {
             ))}
             {cartList.length > 0 ? (
                 <>
+                <br />
                     <button onClick={() => emptyCart()}>Vaciar Carrito</button>
                     <h1>Precio Total: ${totalPrice()}</h1>
+                    <button className="btn-util">
+              <Link to={"/checkout"}>Finalizar Compra</Link>
+            </button>
                 </>
             ) : (
                 <h1>El carrito está vacío</h1>
             )}
+            <br />
+            <br />
             <Link to='/'>Volver a la tienda </Link>
     </div>
     );
