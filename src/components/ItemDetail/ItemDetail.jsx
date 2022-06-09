@@ -31,7 +31,7 @@ function ItemDetail({ product }) {
                 />
                 <CardMedia className="img"
                     image={image}
-                    alt="Boxer Model Tyrant Negro"
+                    alt={title}
                 />
 
                 <CardContent align="center">   
@@ -46,7 +46,7 @@ function ItemDetail({ product }) {
                     </Typography>
                 </CardContent>
             {cantidadDeProductos ?
-                <button><Link to='/cart'>Terminar compra ({ cantidadDeProductos } items)</Link></button> :
+                <button className="btn-terminar"><Link to='/cart'>Terminar compra ({ cantidadDeProductos } items)</Link></button> :
                 <ItemCount initial={1} stock={stock} onAdd={addHandler} />
             }
             </Card>
